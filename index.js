@@ -32,10 +32,17 @@ function createEmployeeRecords (arraySt){
   return this;
 }
 
-let allWagesFor = function () {
-    let eligibleDates = this.timeInEvents.map(function (e) {
-        return e.date
-    })
+function createTimeOutEvent ( date){
+  let arrDa = date.split(" ") ;
+  let ob = {
+    type:"TimeOut" ,
+    hour: parseInt(arrDa[1]),
+    date:arrDa[0]
+  };
+  this.timeOutEvents.push(ob);
+  return this;
+}
+
 
     let payable = eligibleDates.reduce(function (memo, d) {
         return memo + wagesEarnedOnDate.call(this, d)

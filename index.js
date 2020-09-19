@@ -1,6 +1,19 @@
 /* Your Code Here */
-
+function createEmployeeRecord (arraySt){
+  return {
+    firstName : arraySt[0],
+    familyName: arraySt[1],
+    title: arraySt[2],
+    payPerHour: arraySt[3],
+    timeInEvents : [],
+    timeOutEvents:[]
+}
+}
+function createEmployeeRecords (arraySt){
+  return arraySt.map (x => createEmployeeRecord(x));
+}
 /*
+
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
  sneaky bug that we'll cover in the next few lessons!

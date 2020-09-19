@@ -21,6 +21,16 @@ function createEmployeeRecords (arraySt){
  As a result, the lessons for this function will pass *and* it will be available
  for you to use if you need it!
  */
+ function createTimeInEvent (date){
+  let arrDa = date.split(" ") ;
+  let ob = {
+    type:"TimeIn" ,
+    hour: parseInt(arrDa[1]),
+    date:arrDa[0]
+  };
+  this.timeInEvents.push(ob);
+  return this;
+}
 
 let allWagesFor = function () {
     let eligibleDates = this.timeInEvents.map(function (e) {
